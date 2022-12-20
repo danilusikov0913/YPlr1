@@ -6,22 +6,31 @@
 # результат ее работы.
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
-if __name__ == '__main__':
+
+def main():
     def delchis(list1):
-        def delchetnechet(type='even'):
+        def delchetnechet():
+            type = input('Введите even или noteven:\n')
             if type == 'even':
                 for x in range(len(list1)):
                     if x % 2 == 0:
                         list1.pop(list1.index(x))
                         print(list1)
-            else:
+            elif type == 'noteven':
                 for x in range(len(list1)):
                     if x % 2 != 0:
                         list1.pop(list1.index(x))
                         print(list1)
+            else:
+                print('Введена не правильная команда')
 
         return delchetnechet
 
-
-    f = delchis(list1=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14])
+    f = delchis(list1=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
     f()
+    return main
+
+
+if __name__ == '__main__':
+    main()
+    
